@@ -73,6 +73,74 @@
 </head>
 
 <body>
+  <style>
+.hero{
+  height:90vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(135deg,#0f0f0f,#1a1a1a);
+  color:white;
+  position:relative;
+  overflow:hidden;
+}
+
+.hero h1{
+  font-size:40px;
+  color:#00ffcc;
+  margin:0;
+  animation:glow 2s infinite alternate;
+}
+
+.hero p{
+  font-size:18px;
+  margin:15px 0;
+  color:#ccc;
+}
+
+.hero button{
+  padding:12px 25px;
+  background:#00ffcc;
+  border:none;
+  border-radius:30px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.hero button:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 20px #00ffcc;
+}
+
+@keyframes glow{
+  from{ text-shadow:0 0 10px #00ffcc; }
+  to{ text-shadow:0 0 25px #00ffcc; }
+}
+
+.circle{
+  position:absolute;
+  width:300px;
+  height:300px;
+  background:#00ffcc20;
+  border-radius:50%;
+  filter:blur(100px);
+  top:-100px;
+  right:-100px;
+}
+</style>
+
+<div class="hero">
+  <div class="circle"></div>
+  <h1>Welcome to VisionVault 🚀</h1>
+  <p>Study Smart. Grow Fast. Build Your Future.</p>
+  <a href="#articles">
+    <button>Explore Articles</button>
+  </a>
+</div>
+
 
 <header>VisionVault</header>
 
@@ -109,5 +177,6 @@
 
 </body>
 </html>
+
 
 
