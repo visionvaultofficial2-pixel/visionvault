@@ -1,187 +1,189 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>VisionVault</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <title>VisionVault</title>
+
+  <!-- Styles -->
   <style>
-    html{
-  scroll-behavior:smooth;
-}
-    body{
+    /* Smooth scroll */
+    html { scroll-behavior: smooth; }
+
+    /* Body */
+    body {
       margin:0;
-      font-family:Arial, sans-serif;
-      background:#0f0f0f;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg,#0f0f0f,#1a1a1a);
       color:white;
     }
 
-    header{
-      background:linear-gradient(90deg,#111,#1f1f1f);
-      padding:20px;
+    /* Hero Section */
+    .hero{
+      height:90vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
       text-align:center;
-      font-size:28px;
-      font-weight:bold;
-      letter-spacing:2px;
-      box-shadow:0 0 20px #00ffcc50;
+      position:relative;
+      overflow:hidden;
     }
 
-    nav{
-      text-align:center;
-      padding:10px;
-    }
-
-    nav a{
+    .hero h1{
+      font-size:40px;
       color:#00ffcc;
-      text-decoration:none;
-      margin:0 15px;
+      margin:0;
+      animation:glow 2s infinite alternate;
+    }
+
+    .hero p{
+      font-size:18px;
+      margin:15px 0;
+      color:#ccc;
+    }
+
+    .hero button{
+      padding:12px 25px;
+      background:#00ffcc;
+      border:none;
+      border-radius:30px;
       font-weight:bold;
-    }
-
-    .container{
-      padding:20px;
-    }
-
-    .card{
-      background:#1c1c1c;
-      padding:20px;
-      margin:20px 0;
-      border-radius:10px;
-      box-shadow:0 0 15px #00ffcc30;
+      cursor:pointer;
       transition:0.3s;
     }
 
-    .card:hover{
-      transform:scale(1.03);
-      box-shadow:0 0 25px #00ffcc80;
+    .hero button:hover{
+      transform:scale(1.1);
+      box-shadow:0 0 20px #00ffcc;
     }
 
-    button{
-      background:#00ffcc;
+    @keyframes glow{
+      from{ text-shadow:0 0 10px #00ffcc; }
+      to{ text-shadow:0 0 25px #00ffcc; }
+    }
+
+    .circle{
+      position:absolute;
+      width:300px;
+      height:300px;
+      background:#00ffcc20;
+      border-radius:50%;
+      filter:blur(100px);
+      top:-100px;
+      right:-100px;
+    }
+
+    /* Articles Section */
+    #articles{
+      padding:50px 20px;
+      max-width:1000px;
+      margin:auto;
+    }
+    #articles h2{
+      font-size:30px;
+      color:#00ffcc;
+      margin-bottom:20px;
+      text-align:center;
+    }
+    .article-card{
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(15px);
+      border-radius:15px;
+      padding:20px;
+      margin:15px 0;
+      box-shadow:0 0 20px #00ffcc20;
+    }
+    .article-card h3{ color:#00ffcc; margin:0 0 10px 0; }
+    .article-card p{ color:#ccc; }
+
+    /* Contact Section */
+    #contact{
+      padding:50px 20px;
+      background:#111;
+      text-align:center;
+    }
+    #contact h2{ color:#00ffcc; margin-bottom:20px; }
+    #contact input, #contact textarea{
+      width:100%;
+      padding:12px;
+      margin:10px 0;
       border:none;
-      padding:10px 15px;
-      border-radius:5px;
+      border-radius:10px;
+      background:#222;
+      color:white;
+      outline:none;
+      font-size:14px;
+    }
+    #contact button{
+      padding:12px 25px;
+      border:none;
+      border-radius:30px;
+      background:#00ffcc;
       font-weight:bold;
       cursor:pointer;
+      transition:0.3s;
+    }
+    #contact button:hover{
+      background:#00ccaa;
+      transform:scale(1.05);
+      box-shadow:0 0 15px #00ffcc;
     }
 
+    /* Footer */
     footer{
       text-align:center;
       padding:20px;
-      background:#111;
-      margin-top:40px;
-      font-size:14px;
-      color:#aaa;
+      background:#000;
+      color:#666;
+    }
+
+    /* Responsive */
+    @media(max-width:600px){
+      .hero h1{ font-size:28px; }
+      .hero p{ font-size:16px; }
     }
   </style>
 </head>
 
 <body>
-  <style>
-.hero{
-  height:90vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  background:linear-gradient(135deg,#0f0f0f,#1a1a1a);
-  color:white;
-  position:relative;
-  overflow:hidden;
-}
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="circle"></div>
+    <h1>Welcome to VisionVault 🚀</h1>
+    <p>Study Smart. Grow Fast. Build Your Future.</p>
+    <a href="#articles"><button>Explore Articles</button></a>
+  </div>
 
-.hero h1{
-  font-size:40px;
-  color:#00ffcc;
-  margin:0;
-  animation:glow 2s infinite alternate;
-}
+  <!-- Articles Section -->
+  <div id="articles">
+    <h2>Our Articles</h2>
 
-.hero p{
-  font-size:18px;
-  margin:15px 0;
-  color:#ccc;
-}
+    <div class="article-card">
+      <h3>How to Score 90% in Class 10</h3>
+      <p>Follow these smart study tips and tricks to ace your exams and stay ahead in school.</p>
+    </div>
 
-.hero button{
-  padding:12px 25px;
-  background:#00ffcc;
-  border:none;
-  border-radius:30px;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
-}
+    <div class="article-card">
+      <h3>Time Management for Students</h3>
+      <p>Learn how to balance studies, hobbies, and personal life effectively.</p>
+    </div>
+  </div>
 
-.hero button:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 20px #00ffcc;
-}
+  <!-- Contact Section -->
+  <div id="contact">
+    <h2>Contact Us</h2>
+    <form action="https://formsubmit.co/YOURGMAIL@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 
-@keyframes glow{
-  from{ text-shadow:0 0 10px #00ffcc; }
-  to{ text-shadow:0 0 25px #00ffcc; }
-}
-
-.circle{
-  position:absolute;
-  width:300px;
-  height:300px;
-  background:#00ffcc20;
-  border-radius:50%;
-  filter:blur(100px);
-  top:-100px;
-  right:-100px;
-}
-</style>
-
-<div class="hero">
-  <div class="circle"></div>
-  <h1>Welcome to VisionVault 🚀</h1>
-  <p>Study Smart. Grow Fast. Build Your Future.</p>
-  <a href="#articles">
-    <button>Explore Articles</button>
-  </a>
-</div>
-
-
-<header>VisionVault</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="#">Categories</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
-<div class="container">
-
- <div  id="articles" class="card">
-  <h2>How to Focus on Study Without Distraction</h2>
-  <p>Proven methods to improve concentration for students.</p>
-  <a href="article.html">
-    <button>Read Full Article</button>
-  </a>
-</div>
-
-<div class="card">
-  <h2>How to Make Money Online as a Student</h2>
-  <p>Beginner guide for students to start earning.</p>
-  <a href="article.html">
-    <button>Read Full Article</button>
-  </a>
-</div>
-
-
-</div>
-
-<footer>
-  © 2026 VisionVault | All Rights Reserved
-</footer>
-
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 VisionVault | Made with 💎 by Ranveer
+  </footer>
 </body>
 </html>
-
-
-
-
-
