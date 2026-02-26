@@ -1,191 +1,106 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>VisionVault</title>
+  <title>VisionVault</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#0f0f0f;
+      color:white;
+    }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#0f0f0f;color:white}
+    header{
+      background:linear-gradient(90deg,#111,#1f1f1f);
+      padding:20px;
+      text-align:center;
+      font-size:28px;
+      font-weight:bold;
+      letter-spacing:2px;
+      box-shadow:0 0 20px #00ffcc50;
+    }
 
-header{
-background:#000;
-padding:15px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-}
+    nav{
+      text-align:center;
+      padding:10px;
+    }
 
-header h1{color:#00f7ff;font-size:20px}
+    nav a{
+      color:#00ffcc;
+      text-decoration:none;
+      margin:0 15px;
+      font-weight:bold;
+    }
 
-button{
-padding:8px 15px;
-background:#00f7ff;
-border:none;
-border-radius:5px;
-cursor:pointer;
-font-weight:bold;
-}
+    .container{
+      padding:20px;
+    }
 
-.container{padding:20px}
+    .card{
+      background:#1c1c1c;
+      padding:20px;
+      margin:20px 0;
+      border-radius:10px;
+      box-shadow:0 0 15px #00ffcc30;
+      transition:0.3s;
+    }
 
-input,textarea,select{
-width:100%;
-padding:10px;
-margin:10px 0;
-border-radius:5px;
-border:none;
-}
+    .card:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 25px #00ffcc80;
+    }
 
-.card{
-background:#1a1a1a;
-padding:15px;
-margin:15px 0;
-border-radius:10px;
-}
+    button{
+      background:#00ffcc;
+      border:none;
+      padding:10px 15px;
+      border-radius:5px;
+      font-weight:bold;
+      cursor:pointer;
+    }
 
-.card h3{color:#00f7ff}
-
-.comment{
-background:#222;
-padding:8px;
-margin-top:5px;
-border-radius:5px;
-font-size:14px;
-}
-
-#adminPanel{display:none;background:#111;padding:20px}
-
-@media(max-width:600px){
-header h1{font-size:16px}
-button{padding:6px 10px}
-}
-</style>
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111;
+      margin-top:40px;
+      font-size:14px;
+      color:#aaa;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<h1>VisionVault</h1>
-<button onclick="showLogin()">Admin</button>
-</header>
+<header>VisionVault</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Categories</a>
+  <a href="#">Contact</a>
+</nav>
 
 <div class="container">
 
-<h2>Articles</h2>
-<select id="filterCategory" onchange="renderArticles()">
-<option value="All">All Categories</option>
-<option value="Motivation">Motivation</option>
-<option value="Technology">Technology</option>
-<option value="Student">Student</option>
-</select>
+  <div class="card">
+    <h2>First Article</h2>
+    <p>This is your first article. You can edit and write anything here.</p>
+    <button onclick="alert('Article Opened!')">Read More</button>
+  </div>
 
-<div id="articles"></div>
+  <div class="card">
+    <h2>Second Article</h2>
+    <p>Add unlimited articles and grow your website.</p>
+    <button onclick="alert('Article Opened!')">Read More</button>
+  </div>
 
 </div>
 
-<!-- Admin Panel -->
-<div id="adminPanel">
-<h2>Admin Panel</h2>
-
-<input type="text" id="title" placeholder="Article Title">
-<select id="category">
-<option>Motivation</option>
-<option>Technology</option>
-<option>Student</option>
-</select>
-
-<textarea id="content" placeholder="Article Content"></textarea>
-
-<button onclick="addArticle()">Publish Article</button>
-<button onclick="closeAdmin()">Close</button>
-</div>
-
-<script>
-
-const password = "admin123"; // change this
-
-function showLogin(){
-let pass = prompt("Enter Admin Password:");
-if(pass === password){
-document.getElementById("adminPanel").style.display="block";
-}else{
-alert("Wrong Password");
-}
-}
-
-function closeAdmin(){
-document.getElementById("adminPanel").style.display="none";
-}
-
-function addArticle(){
-let title=document.getElementById("title").value;
-let category=document.getElementById("category").value;
-let content=document.getElementById("content").value;
-
-if(title===""||content===""){
-alert("Fill all fields");
-return;
-}
-
-let articles=JSON.parse(localStorage.getItem("articles"))||[];
-
-articles.push({title,category,content,comments:[]});
-localStorage.setItem("articles",JSON.stringify(articles));
-
-document.getElementById("title").value="";
-document.getElementById("content").value="";
-
-renderArticles();
-alert("Article Published!");
-}
-
-function renderArticles(){
-let filter=document.getElementById("filterCategory").value;
-let articles=JSON.parse(localStorage.getItem("articles"))||[];
-let container=document.getElementById("articles");
-container.innerHTML="";
-
-articles.forEach((a,index)=>{
-if(filter==="All"||filter===a.category){
-
-let div=document.createElement("div");
-div.className="card";
-
-div.innerHTML=`
-<h3>${a.title}</h3>
-<small>${a.category}</small>
-<p>${a.content}</p>
-
-<input type="text" placeholder="Add Comment" id="comment${index}">
-<button onclick="addComment(${index})">Comment</button>
-
-<div id="comments${index}">
-${a.comments.map(c=>`<div class="comment">${c}</div>`).join("")}
-</div>
-`;
-
-container.appendChild(div);
-}
-});
-}
-
-function addComment(index){
-let articles=JSON.parse(localStorage.getItem("articles"));
-let input=document.getElementById("comment"+index);
-if(input.value==="") return;
-
-articles[index].comments.push(input.value);
-localStorage.setItem("articles",JSON.stringify(articles));
-renderArticles();
-}
-
-renderArticles();
-
-</script>
+<footer>
+  © 2026 VisionVault | All Rights Reserved
+</footer>
 
 </body>
-</html> 
+</html>
