@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Time Management for Students | VisionVault</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg,#0f0f0f,#1a1a1a);
+      color:white;
+      line-height:1.6;
+      padding:20px;
+    }
+
+    a{color:#00ffcc; text-decoration:none;}
+    a:hover{color:#00ccaa;}
+
+    h1{
+      font-size:32px;
+      color:#00ffcc;
+      text-align:center;
+      margin-bottom:10px;
+      text-shadow: 0 0 10px #00ffcc;
+    }
+
+    .hero-image{
+      width:100%;
+      max-height:300px;
+      object-fit:cover;
+      border-radius:15px;
+      box-shadow:0 0 20px #00ffcc40;
+      margin-bottom:20px;
+    }
+
+    h2{
+      color:#00ffcc;
+      margin-top:25px;
+      font-size:24px;
+      border-left:4px solid #00ffcc;
+      padding-left:10px;
+    }
+
+    p{
+      margin:10px 0;
+      font-size:16px;
+    }
+
+    .image-card{
+      width:100%;
+      max-width:600px;
+      margin:20px auto;
+      border-radius:15px;
+      overflow:hidden;
+      box-shadow:0 0 20px #00ffcc20;
+    }
+
+    .affiliate-link{
+      display:inline-block;
+      margin:10px 0;
+      padding:10px 20px;
+      background:#00ffcc;
+      color:#000;
+      font-weight:bold;
+      border-radius:30px;
+      transition:0.3s;
+    }
+    .affiliate-link:hover{
+      background:#00ccaa;
+      transform:scale(1.05);
+    }
+
+    /* Responsive */
+    @media(max-width:600px){
+      h1{ font-size:28px; }
+      h2{ font-size:20px; }
+      p{ font-size:14px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Hero -->
+  <h1>Time Management for Students ⏱️</h1>
+  <img class="hero-image" src="https://images.unsplash.com/photo-1581091215363-1b0a5a6f2a3c?auto=format&fit=crop&w=1000&q=80" alt="Study Time">
+
+  <!-- Content -->
+  <h2>1. Plan Your Day 🗓️</h2>
+  <p>Create a daily schedule. Allocate time for each subject and include short breaks to stay fresh.</p>
+
+  <div class="image-card">
+    <img src="https://images.unsplash.com/photo-1596495577886-9c44b2630cc0?auto=format&fit=crop&w=800&q=80" alt="Planner">
+  </div>
+
+  <h2>2. Prioritize Tasks ✅</h2>
+  <p>Focus on urgent and important tasks first. Use the Eisenhower Box method to separate tasks by priority.</p>
+
+  <h2>3. Avoid Procrastination 🚫</h2>
+  <p>Stay disciplined. Avoid distractions like mobile games or social media during study time. Use apps like Forest to stay focused.</p>
+
+  <h2>4. Use Tools & Resources 🛠️</h2>
+  <p>Planner apps, online study tools, or even physical calendars can help track deadlines.</p>
+  <a class="affiliate-link" href="AFFILIATE_LINK" target="_blank">Check Productivity Apps</a>
+
+  <div class="image-card">
+    <img src="https://images.unsplash.com/photo-1584697964151-7c856f94a32e?auto=format&fit=crop&w=800&q=80" alt="Focus">
+  </div>
+
+  <h2>5. Review & Adjust 🔄</h2>
+  <p>At the end of each week, check your progress. Adjust your schedule if you’re falling behind.</p>
+
+  <p>Consistent time management builds discipline, reduces stress, and improves performance. Start today and make it a habit!</p>
+</body>
+</html>
