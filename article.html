@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Article - VisionVault</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      font-family:Arial;
+      background:#0f0f0f;
+      color:white;
+      padding:20px;
+    }
+
+    h1{
+      color:#00ffcc;
+    }
+
+    textarea{
+      width:100%;
+      padding:10px;
+      border-radius:5px;
+      border:none;
+      margin-top:10px;
+    }
+
+    button{
+      margin-top:10px;
+      padding:8px 15px;
+      background:#00ffcc;
+      border:none;
+      border-radius:5px;
+      font-weight:bold;
+    }
+
+    .comment-box{
+      margin-top:20px;
+      background:#1c1c1c;
+      padding:10px;
+      border-radius:5px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Article Title</h1>
+<p>Yaha tum apna full article likh sakte ho.</p>
+
+<h3>Leave a Comment</h3>
+
+<textarea id="commentInput" placeholder="Write your comment..."></textarea>
+<br>
+<button onclick="addComment()">Post Comment</button>
+
+<div id="comments"></div>
+
+<script>
+function addComment(){
+  var comment = document.getElementById("commentInput").value;
+  if(comment == "") return;
+
+  var div = document.createElement("div");
+  div.className="comment-box";
+  div.innerText = comment;
+
+  document.getElementById("comments").appendChild(div);
+
+  document.getElementById("commentInput").value="";
+}
+</script>
+
+</body>
+</html>
+
+On Thu, 26 Feb, 2026, 11:36 am Ranveer Chaudhary, <ranveer.pocom16@gmail.com> wrote:
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Article - VisionVault</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      font-family:Arial;
+      background:#0f0f0f;
+      color:white;
+      padding:20px;
+    }
+
+    h1{
+      color:#00ffcc;
+    }
+
+    textarea{
+      width:100%;
+      padding:10px;
+      border-radius:5px;
+      border:none;
+      margin-top:10px;
+    }
+
+    button{
+      margin-top:10px;
+      padding:8px 15px;
+      background:#00ffcc;
+      border:none;
+      border-radius:5px;
+      font-weight:bold;
+    }
+
+    .comment-box{
+      margin-top:20px;
+      background:#1c1c1c;
+      padding:10px;
+      border-radius:5px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Article Title</h1>
+<p>Yaha tum apna full article likh sakte ho.</p>
+
+<h3>Leave a Comment</h3>
+
+<textarea id="commentInput" placeholder="Write your comment..."></textarea>
+<br>
+<button onclick="addComment()">Post Comment</button>
+
+<div id="comments"></div>
+
+<script>
+function addComment(){
+  var comment = document.getElementById("commentInput").value;
+  if(comment == "") return;
+
+  var div = document.createElement("div");
+  div.className="comment-box";
+  div.innerText = comment;
+
+  document.getElementById("comments").appendChild(div);
+
+  document.getElementById("commentInput").value="";
+}
+</script>
+
+</body>
+</html>
+
+On Thu, 26 Feb, 2026, 11:33 am Ranveer Chaudhary, <ranveer.pocom16@gmail.com> wrote:
+<!DOCTYPE html>
+<html>
+<head>
+  <title>VisionVault</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      background:#0f0f0f;
+      color:white;
+    }
+
+    header{
+      background:linear-gradient(90deg,#111,#1f1f1f);
+      padding:20px;
+      text-align:center;
+      font-size:28px;
+      font-weight:bold;
+      letter-spacing:2px;
+      box-shadow:0 0 20px #00ffcc50;
+    }
+
+    nav{
+      text-align:center;
+      padding:10px;
+    }
+
+    nav a{
+      color:#00ffcc;
+      text-decoration:none;
+      margin:0 15px;
+      font-weight:bold;
+    }
+
+    .container{
+      padding:20px;
+    }
+
+    .card{
+      background:#1c1c1c;
+      padding:20px;
+      margin:20px 0;
+      border-radius:10px;
+      box-shadow:0 0 15px #00ffcc30;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 25px #00ffcc80;
+    }
+
+    button{
+      background:#00ffcc;
+      border:none;
+      padding:10px 15px;
+      border-radius:5px;
+      font-weight:bold;
+      cursor:pointer;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      background:#111;
+      margin-top:40px;
+      font-size:14px;
+      color:#aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>VisionVault</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">Categories</a>
+  <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
+  <div class="card">
+    <h2>First Article</h2>
+    <p>This is your first article. You can edit and write anything here.</p>
+    <button onclick="alert('Article Opened!')">Read More</button>
+  </div>
+
+  <div class="card">
+    <h2>Second Article</h2>
+    <p>Add unlimited articles and grow your website.</p>
+    <button onclick="alert('Article Opened!')">Read More</button>
+  </div>
+
+</div>
+
+<footer>
+  © 2026 VisionVault | All Rights Reserved
+</footer>
+
+</body>
+</html>
